@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Hamilton Martial Arts VIC | Sambo Wrestling Grappling 3300</title>
-    <meta name="description" content="Hamilton Combat Sports is the region's premier Martial Arts Club for Grapplers in Hamilton, Victoria, Australia (3300). We provide structured instruction in Submission Grappling, SAMBO, BJJ, Judo, and Wrestling.">
+    <title>Hamilton Martial Arts VIC | Grappling & SAMBO 3300</title>
+    <meta name="description" content="Hamilton Combat Sports provides structured instruction in Submission Grappling, SAMBO, BJJ, Judo, and Wrestling in Hamilton, Victoria, Australia (3300).">
     <meta name="keywords" content="Hamilton Martial Arts VIC, BJJ Hamilton 3300, Wrestling Victoria, Sambo, Combat Sports, Self Defence Hamilton, Grappling, Judo Hamilton Australia">
     <meta name="geo.region" content="AU-VIC">
     <meta name="geo.placename" content="Hamilton, Victoria, Australia">
-    <meta name="geo.position" content="-37.7402;142.0305"> <meta name="ICBM" content="-37.7402, 142.0305">
-    
+    <meta name="geo.position" content="-37.7402;142.0305">
+    <meta name="ICBM" content="-37.7402, 142.0305">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -44,34 +45,28 @@
         /* Define custom font globally */
         body {
             font-family: 'Roboto', sans-serif;
+            background-color: #001F3F; /* Navy background */
+            color: #FFFFFF;
         }
-        
-        /* Color Palette: Black/White/Grey/Red Accent */
-        .bg-black-base { background-color: #0A0A0A; } 
+
+        /* Color Palette: Navy/Red/White/Grey */
+        .bg-navy-base { background-color: #001F3F; }
         .text-white-base { color: #FFFFFF; }
         .border-grey-line { border-color: #333333; }
-        .accent-red { color: #DC2626; } /* Tailwind Red-600 */
+        .accent-red { color: #DC2626; } 
         .bg-accent-red { background-color: #DC2626; }
 
-        /* Override Body Background and Text */
-        body {
-            background-color: #0A0A0A; 
-            color: #FFFFFF; 
-        }
-
-        /* Ensure all text uses normal font weight (400) - NO BOLD */
+        /* Ensure all text normal weight */
         h1, h2, h3, h4, p, span, div, a, button {
             font-weight: 400 !important; 
         }
 
-        /* Enforce high-contrast lines and dark block background */
         .data-block {
             border: 1px solid #333333;
-            background-color: #1A1A1A;
+            background-color: #002B55; /* Slightly lighter navy */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
-        
-        /* Style for the Timetable rows */
+
         .timetable-row {
             display: flex;
             justify-content: space-between;
@@ -81,14 +76,13 @@
         .timetable-row:last-child {
             border-bottom: none;
         }
-        
-        /* Custom list style to ensure no bullets/asterisks */
+
         .clean-list {
             list-style: none;
             padding-left: 0;
         }
         .clean-list li::before {
-            content: '- '; /* Using a hyphen */
+            content: '- ';
             color: #DC2626; 
             font-weight: 400; 
             margin-right: 0.5rem;
@@ -96,9 +90,9 @@
     </style>
 </head>
 
-<body class="bg-black-base text-white-base">
+<body class="bg-navy-base text-white-base">
 
-    <header class="sticky top-0 z-50 bg-black-base border-b-2 border-grey-line shadow-2xl">
+    <header class="sticky top-0 z-50 bg-navy-base border-b-2 border-grey-line shadow-2xl">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="#" class="text-xl accent-red tracking-wider">
@@ -121,8 +115,8 @@
             </div>
         </nav>
 
-        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-black-base/90 border-t border-grey-line">
-            <a href="tel:0412106908" class="block py-2 px-4 accent-red text-center bg-black-base">CALL COACH: 0412 106 908</a>
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-navy-base/90 border-t border-grey-line">
+            <a href="tel:0412106908" class="block py-2 px-4 accent-red text-center bg-navy-base">CALL COACH: 0412 106 908</a>
             <a href="#program" class="block py-2 px-4 text-white-base hover:bg-grey-line">Martial Arts</a>
             <a href="#schedule" class="block py-2 px-4 text-white-base hover:bg-grey-line">Schedule</a>
             <a href="#fees" class="block py-2 px-4 text-white-base hover:bg-grey-line">Fees</a>
@@ -136,8 +130,8 @@
                 <h1 class="text-5xl lg:text-7xl uppercase leading-tight mb-4">
                     HAMILTON <span class="accent-red">MARTIAL ARTS</span> & GRAPPLING
                 </h1>
-                <p class="text-xl text-gray-400 mb-8 max-w-4xl">
-                    Hamilton Combat Sports is the region's premier Martial Arts Club for Grapplers. We provide structured instruction in Submission Grappling, incorporating techniques from SAMBO, BJJ, Judo, and Wrestling. Learn Self Defence and competition mechanics in a single, effective system.
+                <p class="text-xl text-gray-300 mb-8 max-w-4xl">
+                    Hamilton Combat Sports is the region's premier Martial Arts Club for Grapplers. We provide structured instruction in Submission Grappling, incorporating techniques from SAMBO, Grappling, and Wrestling. Learn Self Defence and competition mechanics in a single, effective system.
                 </p>
                 <a href="#contact-module" class="bg-accent-red text-white-base py-3 px-8 text-lg uppercase tracking-wider hover:bg-red-700 transition duration-300 inline-block data-block border-none">
                     START YOUR FREE TRIAL
@@ -156,8 +150,8 @@
                     
                     <div class="data-block p-6 border-l-2 border-accent-red">
                         <h3 class="text-2xl mb-4 accent-red">SAMBO & GRAPPLING</h3>
-                        <p class="text-sm text-gray-400">
-                            A highly efficient combat sports program blending the effective takedowns of Judo and SAMBO with modern BJJ (Brazilian Jiu-Jitsu) and Wrestling.
+                        <p class="text-sm text-gray-300">
+                            A highly efficient combat sports program blending the effective takedowns of Judo and SAMBO with modern Grappling and Wrestling.
                         </p>
                     </div>
 
@@ -166,28 +160,16 @@
                         <ul class="clean-list text-sm space-y-2 text-gray-300">
                             <li>SAMBO, Wrestling and Judo style throws and positional takedowns.</li>
                             <li>Ground control, pins, and submissions.</li>
-                            <li>Practical Self Defence application.</li>
-                            <li>Competition readiness for SAMBO, BJJ and Wrestling rulesets.</li>
+                            <li>Practical self-defence application.</li>
+                            <li>Competition readiness for SAMBO, Grappling and Wrestling rulesets.</li>
                         </ul>
                     </div>
 
                     <div class="data-block p-6">
-                        <h4 class="text-xl mb-3 text-white-base border-b border-grey-line pb-2">WHY HAMILTON COMBAT SPORTS</h4>
+                        <h4 class="text-xl mb-3 text-white-base border-b border-grey-line pb-2">VALIDATION</h4>
                         <p class="text-sm text-gray-300">
-                            Because Martial Arts are for everyone, whether you want to get fit, learn self defence or be a champion. Our instruction is led by coaches with a successful track record in coaching at state and national competition.
+                            Techniques proven in competition.
                         </p>
-                    </div>
-                </div>
-
-                <div class="data-block p-8 mt-12 border-t-2 border-accent-red">
-                    <h3 class="text-2xl accent-red mb-4">YOUR FIRST CLASS (FREE)</h3>
-                    <p class="text-sm text-gray-300 mb-4">
-                        Looking for martial arts in Hamilton VIC? We offer a complimentary introduction session. You will be guided through a safe warm-up and fundamental movements.
-                    </p>
-                    <div class="grid md:grid-cols-3 gap-4 text-xs text-gray-400">
-                        <span>WHAT TO EXPECT: Focus on safe, controlled drills.</span>
-                        <span>WHAT TO WEAR: Standard athletic clothes (t-shirt and shorts).</span>
-                        <span>OUR AIM: Ensure technical familiarity and confidence.</span>
                     </div>
                 </div>
             </div>
@@ -197,27 +179,18 @@
 
         <section id="schedule" class="py-20">
             <div class="container mx-auto px-4 max-w-6xl">
-                <span class="accent-red text-sm uppercase tracking-widest block mb-4">OPERATIONAL INFORMATION</span>
+                <span class="accent-red text-sm uppercase tracking-widest block mb-4">TRAINING SCHEDULE</span>
                 <h2 class="text-3xl mb-8 text-white-base">
-                    Weekly <span class="accent-red">Schedule</span> and <span class="accent-red">Fees</span>
+                    Weekly <span class="accent-red">Schedule</span> & <span class="accent-red">Fees</span>
                 </h2>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div id="schedule" class="data-block p-6">
+                    <div class="data-block p-6">
                         <h3 class="text-xl accent-red mb-4">CLASS TIMETABLE</h3>
-                        
                         <div class="space-y-2 text-sm text-gray-300">
                             <div class="timetable-row">
-                                <span class="text-white-base">MONDAY, TUESDAY</span>
-                                <span>No Training</span>
-                            </div>
-                            <div class="timetable-row">
                                 <span class="text-white-base">WEDNESDAY</span>
-                                <span class="accent-red">18:30 - 20:00: CORE GRAPPLING</span>
-                            </div>
-                            <div class="timetable-row">
-                                <span class="text-white-base">THURSDAY, FRIDAY, SATURDAY</span>
-                                <span>No Training</span>
+                                <span class="accent-red">18:30 – 20:00: GRAPPLING</span>
                             </div>
                         </div>
                         <p class="text-xs text-gray-500 mt-4">Note: Training is currently held on Wednesday evenings only.</p>
@@ -225,27 +198,30 @@
 
                     <div id="fees" class="data-block p-6">
                         <h3 class="text-xl accent-red mb-4">MEMBERSHIP FEES</h3>
-                        
                         <div class="space-y-2 text-sm text-gray-300">
                             <div class="timetable-row">
-                                <span class="text-white-base">Monthly Unlimited Access</span>
-                                <span class="accent-red">$80.00 / month</span>
+                                <span class="text-white-base">Casual Visit</span>
+                                <span class="accent-red">$21.50 (includes venue fee)</span>
                             </div>
                             <div class="timetable-row">
-                                <span class="text-white-base">Casual Session Drop-In</span>
-                                <span class="accent-red">$20.00 / session</span>
+                                <span class="text-white-base">Direct Debit (Fortnightly)</span>
+                                <span class="accent-red">$27 / fortnight</span>
+                            </div>
+                            <div class="timetable-row">
+                                <span class="text-white-base">Direct Debit (Monthly)</span>
+                                <span class="accent-red">$52 / month</span>
                             </div>
                             <div class="timetable-row border-b-0">
                                 <span class="text-white-base">First Introduction Class</span>
                                 <span class="accent-red">FREE</span>
                             </div>
                         </div>
-                        <p class="text-xs text-gray-500 mt-4">Policy: Direct Debit preferred for Monthly. No contracts or joining fees.</p>
+                        <p class="text-xs text-gray-500 mt-4">Policy: No contracts or joining fees.</p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <hr class="border-grey-line my-4 max-w-6xl mx-auto">
 
         <section id="coaching" class="py-20">
@@ -257,31 +233,14 @@
 
                 <div class="data-block p-8">
                     <h3 class="text-xl accent-red mb-4">EXPERIENCED MARTIAL ARTISTS</h3>
-                    
                     <p class="text-sm text-gray-300 mb-6">
                         Our instructors are certified martial artists with extensive competitive experience. This ensures all instruction at Hamilton Combat Sports is held to the highest standard for technical accuracy and practical application.
                     </p>
-                    
                     <div class="grid md:grid-cols-3 gap-4 text-xs text-gray-400">
                         <span class="border-l pl-2 border-accent-red">EXPERIENCE: Proven competition background (Local, State, National).</span>
                         <span class="border-l pl-2 border-accent-red">VALIDATION: Techniques proven in BJJ and Wrestling competition.</span>
                         <span class="border-l pl-2 border-accent-red">APPROACH: Structured, progressive teaching methods.</span>
                     </div>
-                </div>
-                
-                <div id="uniform-reqs" class="data-block p-6 mt-8">
-                    <h4 class="text-xl accent-red mb-3">TRAINING ATTIRE</h4>
-                    <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
-                        <div>
-                            <span class="text-white-base">SUBMISSION GRAPPLING:</span> 
-                            <p class="text-gray-400 text-xs">Rash guard/fitted shirt and shorts (must be free of zippers/pockets).</p>
-                        </div>
-                        <div>
-                            <span class="text-white-base">SAMBO:</span> 
-                            <p class="text-gray-400 text-xs">SAMBO uniform required (kurtka, shorts, wrestling shoes). Please contact the Coach for uniform buying advice.</p>
-                        </div>
-                    </div>
-                    <p class="text-xs text-gray-500 mt-4">Safety Note: All gear must be clean. Nails must be trimmed.</p>
                 </div>
             </div>
         </section>
@@ -289,11 +248,9 @@
         <section id="contact-module" class="py-20 bg-accent-red">
             <div class="container mx-auto px-4 max-w-4xl">
                 <h2 class="text-3xl text-white-base text-center mb-6">
-                    GET IN <span class="bg-black-base py-1 px-2">TOUCH</span>
+                    GET IN <span class="bg-navy-base py-1 px-2">TOUCH</span>
                 </h2>
-                
-                <div class="bg-black-base p-8 data-block border-2 border-white-base">
-                    
+                <div class="bg-navy-base p-8 data-block border-2 border-white-base">
                     <div class="space-y-4 text-center">
                         <p class="text-lg text-white-base">Start your Martial Arts journey in Hamilton, VIC today.</p>
                         <p class="text-lg">
@@ -306,43 +263,36 @@
                             Contact the coach to find the training location and verify the trial schedule.
                         </p>
                     </div>
-                    
                 </div>
             </div>
         </section>
 
-        <footer class="bg-black-base py-6 border-t border-grey-line">
+        <footer class="bg-navy-base py-6 border-t border-grey-line">
             <div class="container mx-auto px-4 text-center text-gray-500">
-                
                 <div class="mb-4 space-x-6 text-xl">
-                    <a href="https://www.facebook.com/profile.php?id=61583853042632" target="_blank" class="text-white-base hover:accent-red transition duration-300" aria-label="Follow us on Facebook">
-                        FB
-                    </a>
-                    <a href="https://www.instagram.com/sambowrestlingluke/" target="_blank" class="text-white-base hover:accent-red transition duration-300" aria-label="Follow us on Instagram">
-                        IG
-                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61583853042632" target="_blank" class="text-white-base hover:accent-red transition duration-300" aria-label="Follow us on Facebook">FB</a>
+                    <a href="https://www.instagram.com/sambowrestlingluke/" target="_blank" class="text-white-base hover:accent-red transition duration-300" aria-label="Follow us on Instagram">IG</a>
                 </div>
                 <p class="mb-1 text-sm">HAMILTON COMBAT SPORTS | MARTIAL ARTS HAMILTON</p>
-                <p class="mb-1 text-xs text-gray-500">
-                    Located in Hamilton, Victoria, Australia 3300
-                </p>
+                <p class="mb-1 text-xs text-gray-500">Located in Hamilton, Victoria, Australia 3300</p>
                 <p class="text-xs">&copy; 2025 ALL RIGHTS RESERVED.</p>
             </div>
         </footer>
 
         <script>
-            document.getElementById('mobile-menu-button').onclick = function() {
-                document.getElementById('mobile-menu').classList.toggle('hidden');
+            const menuButton = document.getElementById('mobile-menu-button');
+            menuButton.onclick = function() {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+                menuButton.setAttribute('aria-expanded', !menu.classList.contains('hidden'));
             };
 
-            // Close mobile menu when a link is clicked
             document.querySelectorAll('#mobile-menu a').forEach(item => {
                 item.addEventListener('click', () => {
                     document.getElementById('mobile-menu').classList.add('hidden');
                 });
             });
         </script>
-
     </main>
 </body>
 </html>
