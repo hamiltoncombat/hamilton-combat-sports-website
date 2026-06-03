@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-AU" class="scroll-smooth">
+<html lang="en-AU">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -122,10 +122,6 @@
             vertical-align: -0.18em;
             flex-shrink: 0;
         }
-        /* FIX: offset anchor targets so sticky header doesn't cover them */
-        section[id] {
-            scroll-margin-top: 5rem;
-        }
     </style>
     <script type="application/ld+json">
     {
@@ -170,12 +166,12 @@
                     HAMILTON <span class="text-red-600">COMBAT SPORTS</span>
                 </a>
                 <div class="hidden md:flex space-x-8 text-sm font-medium">
-                    <a href="#program" class="hover:text-red-500 transition">Program</a>
-                    <a href="#schedule" class="hover:text-red-500 transition">Schedule</a>
-                    <a href="#fees" class="hover:text-red-500 transition">Pricing</a>
-                    <a href="#coaching" class="hover:text-red-500 transition">Coaches</a>
-                    <a href="#faq" class="hover:text-red-500 transition">FAQ</a>
-                    <a href="#contact" class="hover:text-red-500 transition">Contact</a>
+                    <a href="#program" class="nav-link hover:text-red-500 transition">Program</a>
+                    <a href="#schedule" class="nav-link hover:text-red-500 transition">Schedule</a>
+                    <a href="#fees" class="nav-link hover:text-red-500 transition">Pricing</a>
+                    <a href="#coaching" class="nav-link hover:text-red-500 transition">Coaches</a>
+                    <a href="#faq" class="nav-link hover:text-red-500 transition">FAQ</a>
+                    <a href="#contact" class="nav-link hover:text-red-500 transition">Contact</a>
                 </div>
                 <div class="flex items-center gap-4">
                     <a href="tel:0412106908" class="hidden sm:flex items-center gap-2 text-sm bg-white/5 px-4 py-2 rounded-full hover:bg-red-600/20 transition border border-white/10">
@@ -188,12 +184,12 @@
                 </div>
             </div>
             <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-3 text-base font-medium">
-                <a href="#program" class="block py-2 hover:text-red-500 transition">Program</a>
-                <a href="#schedule" class="block py-2 hover:text-red-500 transition">Schedule</a>
-                <a href="#fees" class="block py-2 hover:text-red-500 transition">Pricing</a>
-                <a href="#coaching" class="block py-2 hover:text-red-500 transition">Coaches</a>
-                <a href="#faq" class="block py-2 hover:text-red-500 transition">FAQ</a>
-                <a href="#contact" class="block py-2 hover:text-red-500 transition">Contact</a>
+                <a href="#program" class="nav-link block py-2 hover:text-red-500 transition">Program</a>
+                <a href="#schedule" class="nav-link block py-2 hover:text-red-500 transition">Schedule</a>
+                <a href="#fees" class="nav-link block py-2 hover:text-red-500 transition">Pricing</a>
+                <a href="#coaching" class="nav-link block py-2 hover:text-red-500 transition">Coaches</a>
+                <a href="#faq" class="nav-link block py-2 hover:text-red-500 transition">FAQ</a>
+                <a href="#contact" class="nav-link block py-2 hover:text-red-500 transition">Contact</a>
                 <a href="tel:0412106908" class="block py-2 text-red-400">Call 0412 106 908</a>
             </div>
         </div>
@@ -211,8 +207,8 @@
                         A local club for Submission Grappling, SAMBO, Judo and Wrestling. Structured classes, practical self&#8209;defence and competition preparation.
                     </p>
                     <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="#contact" class="btn-primary px-8 py-3 rounded-full font-semibold tracking-wide">Start your free trial</a>
-                        <a href="#schedule" class="px-8 py-3 rounded-full border border-white/20 hover:bg-white/5 transition font-medium">View schedule &rarr;</a>
+                        <a href="#contact" class="nav-link btn-primary px-8 py-3 rounded-full font-semibold tracking-wide">Start your free trial</a>
+                        <a href="#schedule" class="nav-link px-8 py-3 rounded-full border border-white/20 hover:bg-white/5 transition font-medium">View schedule &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -583,23 +579,47 @@
     </div>
 
     <script>
-        const menuBtn = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // ── Smooth scroll for all anchor links ──────────────────────────────
+        // Replaces native anchor behaviour with JS scroll so it works
+        // reliably on Android/Chrome (Pixel etc.) with a sticky header.
+        var HEADER_HEIGHT = 80; // px — matches h-20 on desktop, h-16 on mobile
+
+        function scrollToSection(id) {
+            var target = document.getElementById(id);
+            if (!target) return;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - HEADER_HEIGHT;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+
+        document.querySelectorAll('a.nav-link[href^="#"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                var id = href.slice(1);
+                // Close mobile menu first
+                document.getElementById('mobile-menu').classList.add('hidden');
+                scrollToSection(id);
+            });
+        });
+
+        // ── Mobile menu toggle ───────────────────────────────────────────────
+        var menuBtn = document.getElementById('mobile-menu-button');
+        var mobileMenu = document.getElementById('mobile-menu');
         if (menuBtn) {
-            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-            // FIX: close mobile menu on ANY anchor link click (including hero buttons)
-            document.querySelectorAll('a[href^="#"]').forEach(link => {
-                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
             });
         }
 
-        document.querySelectorAll('.faq-item').forEach(item => {
-            const question = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-            question.addEventListener('click', () => {
-                const isOpen = answer.classList.contains('open');
-                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-                document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('open'));
+        // ── FAQ accordion ────────────────────────────────────────────────────
+        document.querySelectorAll('.faq-item').forEach(function(item) {
+            var question = item.querySelector('.faq-question');
+            var answer = item.querySelector('.faq-answer');
+            question.addEventListener('click', function() {
+                var isOpen = answer.classList.contains('open');
+                document.querySelectorAll('.faq-answer').forEach(function(a) { a.classList.remove('open'); });
+                document.querySelectorAll('.faq-question').forEach(function(q) { q.classList.remove('open'); });
                 if (!isOpen) {
                     answer.classList.add('open');
                     question.classList.add('open');
@@ -607,37 +627,39 @@
             });
         });
 
-        const form = document.getElementById('trialForm');
-        const confirmationDiv = document.getElementById('formConfirmation');
-        form.addEventListener('submit', (e) => {
+        // ── Trial booking form ───────────────────────────────────────────────
+        var form = document.getElementById('trialForm');
+        var confirmationDiv = document.getElementById('formConfirmation');
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const mobile = document.getElementById('mobile').value.trim();
+            var name = document.getElementById('name').value.trim();
+            var mobile = document.getElementById('mobile').value.trim();
             if (!name || !mobile) {
                 alert('Please enter both name and mobile number.');
                 return;
             }
-            const email = document.getElementById('email').value.trim();
-            let body = `Name: ${name}%0D%0AMobile: ${mobile}`;
-            if (email) body += `%0D%0AEmail: ${email}`;
-            body += `%0D%0A%0D%0A(Reply to confirm the trial.)`;
-            const subject = `Free trial request from ${name}`;
-            window.location.href = `mailto:hamiltoncombatsports@protonmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+            var email = document.getElementById('email').value.trim();
+            var body = 'Name: ' + name + '%0D%0AMobile: ' + mobile;
+            if (email) body += '%0D%0AEmail: ' + email;
+            body += '%0D%0A%0D%0A(Reply to confirm the trial.)';
+            var subject = 'Free trial request from ' + name;
+            window.location.href = 'mailto:hamiltoncombatsports@protonmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
             confirmationDiv.textContent = 'Your email draft has been opened. Please check and press Send to complete your booking.';
             confirmationDiv.classList.remove('hidden');
             form.reset();
-            setTimeout(() => { confirmationDiv.classList.add('hidden'); }, 8000);
+            setTimeout(function() { confirmationDiv.classList.add('hidden'); }, 8000);
         });
 
-        const chatBubble = document.getElementById('chatBubble');
-        const chatBox = document.getElementById('chatBox');
-        const closeChat = document.getElementById('closeChat');
-        const sendBtn = document.getElementById('sendChat');
-        const chatInput = document.getElementById('chatInput');
-        const chatMessages = document.getElementById('chatMessages');
+        // ── Chatbot ──────────────────────────────────────────────────────────
+        var chatBubble = document.getElementById('chatBubble');
+        var chatBox = document.getElementById('chatBox');
+        var closeChat = document.getElementById('closeChat');
+        var sendBtn = document.getElementById('sendChat');
+        var chatInput = document.getElementById('chatInput');
+        var chatMessages = document.getElementById('chatMessages');
 
-        function addMessage(text, isUser = false) {
-            const msgDiv = document.createElement('div');
+        function addMessage(text, isUser) {
+            var msgDiv = document.createElement('div');
             msgDiv.className = isUser ? 'bg-red-600/30 p-2 rounded-lg text-right' : 'bg-white/10 p-2 rounded-lg';
             msgDiv.innerText = text;
             chatMessages.appendChild(msgDiv);
@@ -645,29 +667,29 @@
         }
 
         function getBotReply(question) {
-            const q = question.toLowerCase();
+            var q = question.toLowerCase();
             if (q.includes('free trial') || q.includes('first class')) return "Your first intro class is free. To book, reply with your name and number, or use the booking form in the contact section.";
             if (q.includes('fee') || q.includes('cost') || q.includes('price')) return "Casual adult $20, child $15. Weekly $35, fortnightly $55, monthly $90. Family plan available. First class free. No contracts.";
-            if (q.includes('schedule') || q.includes('when') || q.includes('wednesday') || q.includes('thursday') || q.includes('time')) return "We train Wednesday and Thursday evenings, 5:30pm – 7:00pm at HILAC, Hamilton.";
+            if (q.includes('schedule') || q.includes('when') || q.includes('wednesday') || q.includes('thursday') || q.includes('time')) return "We train Wednesday and Thursday evenings, 5:30pm \u2013 7:00pm at HILAC, Hamilton.";
             if (q.includes('where') || q.includes('location') || q.includes('address')) return "Hamilton, VIC 3300. Exact venue shared after booking. Call 0412 106 908 for directions.";
             if (q.includes('sambo') || q.includes('grappling') || q.includes('judo')) return "We teach Submission Grappling with SAMBO, Judo and Wrestling.";
-            if (q.includes('beginner') || q.includes('new')) return "Beginners are welcome. The free intro class is designed for new students – just show up.";
+            if (q.includes('beginner') || q.includes('new')) return "Beginners are welcome. The free intro class is designed for new students \u2013 just show up.";
             return "I can help with that. For specific questions, it's best to call 0412 106 908 or email hamiltoncombatsports@protonmail.com.";
         }
 
         function sendUserMessage() {
-            const msg = chatInput.value.trim();
+            var msg = chatInput.value.trim();
             if (!msg) return;
             addMessage(msg, true);
             chatInput.value = '';
-            setTimeout(() => { addMessage(getBotReply(msg), false); }, 400);
+            setTimeout(function() { addMessage(getBotReply(msg), false); }, 400);
         }
 
-        chatBubble.addEventListener('click', () => chatBox.classList.toggle('hidden'));
-        closeChat.addEventListener('click', () => chatBox.classList.add('hidden'));
+        chatBubble.addEventListener('click', function() { chatBox.classList.toggle('hidden'); });
+        closeChat.addEventListener('click', function() { chatBox.classList.add('hidden'); });
         sendBtn.addEventListener('click', sendUserMessage);
-        chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendUserMessage(); });
-        setTimeout(() => {
+        chatInput.addEventListener('keypress', function(e) { if (e.key === 'Enter') sendUserMessage(); });
+        setTimeout(function() {
             if (chatMessages.children.length === 1) {
                 addMessage("Ask me about schedule, fees, or book a free trial.", false);
             }
