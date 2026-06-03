@@ -594,20 +594,23 @@
             }
         }
 
+        var scrolling = false;
         function handleAnchorEvent(e) {
             var link = e.currentTarget;
             var href = link.getAttribute('href');
             if (!href || href === '#' || href.charAt(0) !== '#') return;
             e.preventDefault();
             e.stopPropagation();
+            if (scrolling) return;
+            scrolling = true;
+            setTimeout(function() { scrolling = false; }, 600);
             var id = href.slice(1);
             document.getElementById('mobile-menu').classList.add('hidden');
-            // Small delay lets the menu close before scroll on iOS
             setTimeout(function() { scrollToSection(id); }, 10);
         }
 
         document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-            link.addEventListener('touchend', handleAnchorEvent, { passive: false });
+            link.addEventListener('pointerup', handleAnchorEvent);
             link.addEventListener('click', handleAnchorEvent);
         });
 
