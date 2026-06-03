@@ -122,6 +122,10 @@
             vertical-align: -0.18em;
             flex-shrink: 0;
         }
+        /* FIX: offset anchor targets so sticky header doesn't cover them */
+        section[id] {
+            scroll-margin-top: 5rem;
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -338,7 +342,6 @@
                 <div class="mt-8 p-5 bg-white/5 rounded-xl border border-white/10">
                     <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 justify-center text-sm text-gray-300">
                         <span class="flex items-center gap-2">
-                            <!-- gi / martial arts icon: person with belt -->
                             <svg class="info-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 2a3 3 0 110 6 3 3 0 010-6z"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6.5 10.5C7.5 9.5 9 9 12 9s4.5.5 5.5 1.5L19 22H5L6.5 10.5z"/>
@@ -348,7 +351,6 @@
                         </span>
                         <span class="hidden sm:block text-white/20">|</span>
                         <span class="flex items-center gap-2">
-                            <!-- calendar / nights icon -->
                             <svg class="info-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-hidden="true">
                                 <rect x="3" y="4" width="18" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 2v4M8 2v4M3 10h18"/>
@@ -585,7 +587,8 @@
         const mobileMenu = document.getElementById('mobile-menu');
         if (menuBtn) {
             menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
+            // FIX: close mobile menu on ANY anchor link click (including hero buttons)
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
                 link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             });
         }
@@ -649,7 +652,7 @@
             if (q.includes('where') || q.includes('location') || q.includes('address')) return "Hamilton, VIC 3300. Exact venue shared after booking. Call 0412 106 908 for directions.";
             if (q.includes('sambo') || q.includes('grappling') || q.includes('judo')) return "We teach Submission Grappling with SAMBO, Judo and Wrestling.";
             if (q.includes('beginner') || q.includes('new')) return "Beginners are welcome. The free intro class is designed for new students – just show up.";
-            return "I can help with that. For specific questions, it’s best to call 0412 106 908 or email hamiltoncombatsports@protonmail.com.";
+            return "I can help with that. For specific questions, it's best to call 0412 106 908 or email hamiltoncombatsports@protonmail.com.";
         }
 
         function sendUserMessage() {
