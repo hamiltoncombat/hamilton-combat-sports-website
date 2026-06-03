@@ -580,27 +580,35 @@
 
     <script>
         // ── Smooth scroll for all anchor links ──────────────────────────────
-        // Replaces native anchor behaviour with JS scroll so it works
-        // reliably on Android/Chrome (Pixel etc.) with a sticky header.
-        var HEADER_HEIGHT = 80; // px — matches h-20 on desktop, h-16 on mobile
+        // Uses both touchend and click to work on iOS Safari, Android Chrome.
+        var HEADER_HEIGHT = 72;
 
         function scrollToSection(id) {
             var target = document.getElementById(id);
             if (!target) return;
             var top = target.getBoundingClientRect().top + window.pageYOffset - HEADER_HEIGHT;
-            window.scrollTo({ top: top, behavior: 'smooth' });
+            try {
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            } catch(e) {
+                window.scrollTo(0, top);
+            }
         }
 
-        document.querySelectorAll('a.nav-link[href^="#"]').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                var href = this.getAttribute('href');
-                if (href === '#') return;
-                e.preventDefault();
-                var id = href.slice(1);
-                // Close mobile menu first
-                document.getElementById('mobile-menu').classList.add('hidden');
-                scrollToSection(id);
-            });
+        function handleAnchorEvent(e) {
+            var link = e.currentTarget;
+            var href = link.getAttribute('href');
+            if (!href || href === '#' || href.charAt(0) !== '#') return;
+            e.preventDefault();
+            e.stopPropagation();
+            var id = href.slice(1);
+            document.getElementById('mobile-menu').classList.add('hidden');
+            // Small delay lets the menu close before scroll on iOS
+            setTimeout(function() { scrollToSection(id); }, 10);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+            link.addEventListener('touchend', handleAnchorEvent, { passive: false });
+            link.addEventListener('click', handleAnchorEvent);
         });
 
         // ── Mobile menu toggle ───────────────────────────────────────────────
