@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Hamilton Combat Sports | Grappling in Hamilton VIC</title>
     <meta name="description" content="Hamilton Combat Sports – Grappling classes in Hamilton, Victoria 3300. Free intro class.">
-    <meta name="keywords" content="Hamilton Martial Arts VIC, Sambo Hamilton, Submission Grappling Hamilton 3300, Combat Sports Victoria, Self Defence Hamilton">
+    <meta name="keywords" content="Hamilton Martial Arts VIC, Grappling Hamilton 3300, Combat Sports Victoria, Self Defence Hamilton">
     <meta name="geo.region" content="AU-VIC">
     <meta name="geo.placename" content="Hamilton, Victoria, Australia">
     <meta name="geo.position" content="-37.7402;142.0305">
@@ -141,28 +141,31 @@
             vertical-align: -0.18em;
             flex-shrink: 0;
         }
-        /* Subtle faded images for modern sleek look */
-        .img-fade {
-            opacity: 0.82;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            filter: saturate(0.92) contrast(1.02);
-        }
-        .img-fade:hover {
-            opacity: 0.95;
-            transform: scale(1.015);
-        }
-        .img-overlay {
+        /* Faded background-image-behind-text sections (same treatment as the hero) */
+        .bg-photo-section {
             position: relative;
             overflow: hidden;
-            border-radius: 1.25rem;
         }
-        .img-overlay::after {
-            content: '';
+        .bg-photo-section .bg-photo-img {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(10,12,16,0.55) 0%, transparent 55%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.28;
+            filter: saturate(0.9) contrast(1.02);
+            z-index: 0;
+        }
+        .bg-photo-section .bg-photo-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
             pointer-events: none;
-            border-radius: inherit;
+        }
+        .bg-photo-section .bg-photo-content {
+            position: relative;
+            z-index: 2;
         }
     </style>
     <script type="application/ld+json">
@@ -181,7 +184,7 @@
       "telephone": "+61412106908",
       "email": "hamiltoncombatsports@protonmail.com",
       "url": "https://hamiltoncombatsports.com",
-      "description": "Hamilton Combat Sports provides Grappling classes in Hamilton, Victoria.Free intro class.",
+      "description": "Hamilton Combat Sports provides Grappling classes in Hamilton, Victoria. Free intro class.",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -248,9 +251,9 @@
             <div class="container mx-auto px-5 lg:px-8 max-w-6xl relative z-10">
                 <div class="max-w-2xl">
                     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.08]">
-                        SAMBO &amp;<br>
-                        <span class="text-red-600">SUBMISSION</span><br>
-                        GRAPPLING
+                        HAMILTON<br>
+                        <span class="text-red-600">GRAPPLING</span><br>
+                        AND MARTIAL ARTS
                     </h1>
                     <p class="text-lg md:text-xl text-gray-300 mt-6 leading-relaxed">
                         Structured classes in Hamilton, VIC. Practical skills, competition preparation.
@@ -265,8 +268,10 @@
         </section>
 
         <!-- WHAT WE TRAIN -->
-        <section id="program" class="py-20 md:py-28">
-            <div class="container mx-auto px-5 lg:px-8 max-w-6xl">
+        <section id="program" class="py-20 md:py-28 bg-photo-section">
+            <img src="images/advert2.jpeg" alt="" class="bg-photo-img">
+            <div class="bg-photo-overlay bg-gradient-to-b from-[#0a0c10] via-[#0a0c10]/90 to-[#0a0c10]"></div>
+            <div class="container mx-auto px-5 lg:px-8 max-w-6xl bg-photo-content">
                 <div class="text-center md:text-left mb-14">
                     <span class="text-red-500 font-semibold tracking-wider uppercase text-sm">What we teach</span>
                     <h2 class="text-4xl md:text-5xl font-bold mt-2"><span class="text-red-600">Grappling</span></h2>
@@ -275,14 +280,14 @@
                     </p>
                 </div>
 
-                    <!-- Submission Grappling card -->
+                    <!-- Grappling card -->
                     <div class="glass-card p-7 md:p-9 animate-fade-up delay-100">
                         <div class="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-5">
                             <svg class="simple-icon" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                         </div>
                         <h3 class="text-2xl font-bold text-red-500">Grappling</h3>
                         <p class="text-gray-300 mt-4 leading-relaxed">
-                            Submission Grappling (often called no-gi grappling) is the modern ground-fighting system focused on positional control, transitions and finishing with joint locks or chokes. It draws from Sambo, Brazilian jiu-jitsu, wrestling and catch wrestling, and is practised without the traditional jacket (gi/kurtka). Ideal for building functional strength, timing and real-world control skills.
+                            Grappling (often called no-gi grappling) is the modern ground-fighting system focused on positional control, transitions and finishing with joint locks or chokes. It draws from Brazilian jiu-jitsu, wrestling and catch wrestling, and is practised without the traditional jacket (no-gi). Ideal for building functional strength, timing and real-world control skills.
                         </p>
                         <ul class="mt-5 space-y-2 text-gray-300 text-sm list-disc list-inside marker:text-red-500">
                             <li>Positional dominance &amp; escapes</li>
@@ -292,13 +297,8 @@
                     </div>
                 </div>
 
-                <!-- Image 2 - strategic placement between explanations and benefits -->
-                <div class="img-overlay mb-14 max-w-4xl mx-auto">
-                    <img src="images/advert2.jpeg" alt="Athletes training Sambo and submission grappling" class="img-fade w-full h-56 sm:h-72 md:h-80 object-cover rounded-2xl shadow-xl" loading="lazy">
-                </div>
-
                 <!-- Benefits row -->
-                <div class="grid sm:grid-cols-3 gap-6">
+                <div class="grid sm:grid-cols-3 gap-6 mt-14">
                     <div class="glass-card p-6 text-center animate-fade-up">
                         <h4 class="font-bold text-white mb-2">Skill development</h4>
                         <p class="text-gray-400 text-sm leading-relaxed">Throws, takedowns, ground control and submissions taught step-by-step.</p>
@@ -309,7 +309,7 @@
                     </div>
                     <div class="glass-card p-6 text-center animate-fade-up delay-200">
                         <h4 class="font-bold text-white mb-2">Competition ready</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">Techniques tested in local and state-level Sambo and grappling events.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Techniques tested in local and state-level grappling events.</p>
                     </div>
                 </div>
             </div>
@@ -409,41 +409,38 @@
             </div>
         </section>
 
-        <!-- COACHING + Image 3 -->
-        <section id="coaching" class="py-16 bg-white/[0.03] rounded-t-3xl">
-            <div class="container mx-auto px-5 lg:px-8 max-w-6xl">
+        <!-- COACHING -->
+        <section id="coaching" class="py-16 bg-white/[0.03] rounded-t-3xl bg-photo-section">
+            <img src="images/advert3.jpg" alt="" class="bg-photo-img">
+            <div class="bg-photo-overlay bg-gradient-to-b from-[#0a0c10] via-[#0a0c10]/85 to-[#0a0c10]"></div>
+            <div class="container mx-auto px-5 lg:px-8 max-w-6xl bg-photo-content">
                 <div class="text-center mb-12">
                     <span class="text-red-500 font-semibold tracking-wider uppercase text-sm">Our coaches</span>
                     <h2 class="text-4xl md:text-5xl font-bold mt-2">Meet the <span class="text-red-600">instructors</span></h2>
                 </div>
 
-                <div class="grid lg:grid-cols-5 gap-8 items-center max-w-5xl mx-auto">
-                    <div class="lg:col-span-2 img-overlay">
-                        <img src="images/advert3.jpg" alt="Coach and athletes at Hamilton Combat Sports" class="img-fade w-full h-64 lg:h-80 object-cover rounded-2xl shadow-xl" loading="lazy">
+                <div class="max-w-3xl mx-auto glass-card p-8 md:p-10">
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Our coaches have competed at local, state and national levels and focus on clear, progressive instruction. All techniques are drawn from modern grappling.
+                    </p>
+                    <div class="flex flex-wrap gap-3 text-sm text-gray-200 mb-8">
+                        <span class="border-l-2 border-red-500 pl-3">Competition background</span>
+                        <span class="border-l-2 border-red-500 pl-3">Grappling experience</span>
+                        <span class="border-l-2 border-red-500 pl-3">Structured teaching</span>
                     </div>
-                    <div class="lg:col-span-3 glass-card p-8 md:p-10">
-                        <p class="text-gray-300 leading-relaxed mb-6">
-                            Our coaches have competed at local, state and national levels and focus on clear, progressive instruction. All techniques are drawn from Sambo and modern submission grappling.
-                        </p>
-                        <div class="flex flex-wrap gap-3 text-sm text-gray-200 mb-8">
-                            <span class="border-l-2 border-red-500 pl-3">Competition background</span>
-                            <span class="border-l-2 border-red-500 pl-3">Sambo · Grappling experience</span>
-                            <span class="border-l-2 border-red-500 pl-3">Structured teaching</span>
+                    <div class="flex flex-col sm:flex-row gap-5 items-center border-t border-white/10 pt-7">
+                        <div class="w-24 h-24 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden flex-shrink-0">
+                            <svg class="w-14 h-14 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                         </div>
-                        <div class="flex flex-col sm:flex-row gap-5 items-center border-t border-white/10 pt-7">
-                            <div class="w-24 h-24 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden flex-shrink-0">
-                                <svg class="w-14 h-14 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                            </div>
-                            <div class="text-center sm:text-left">
-                                <h3 class="text-2xl font-bold text-red-500">Luke</h3>
-                                <ul class="mt-2 space-y-1 text-gray-300 text-sm">
-                                    <li>✓ Over 15 years combat sports experience</li>
-                                    <li>✓ Qualified Sambo and Wrestling coach</li>
-                                    <li>✓ Former National Champion</li>
-                                    <li>✓ Coached &amp; cornered State and National Champions</li>
-                                    <li>✓ Clear, supportive, detail-focused coaching</li>
-                                </ul>
-                            </div>
+                        <div class="text-center sm:text-left">
+                            <h3 class="text-2xl font-bold text-red-500">Luke</h3>
+                            <ul class="mt-2 space-y-1 text-gray-300 text-sm">
+                                <li>✓ Over 15 years combat sports experience</li>
+                                <li>✓ Qualified Grappling and Wrestling coach</li>
+                                <li>✓ Former National Champion</li>
+                                <li>✓ Coached &amp; cornered State and National Champions</li>
+                                <li>✓ Clear, supportive, detail-focused coaching</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -465,8 +462,7 @@
                         </div>
                         <div class="faq-answer px-2 text-gray-300 text-sm leading-relaxed">
                             <ul class="list-disc list-inside space-y-1">
-                                <li><strong>Submission Grappling:</strong> Rash guard or fitted t-shirt and shorts (no zippers or pockets).</li>
-                                <li><strong>Sambo:</strong> Sambo uniform (kurtka, shorts, wrestling shoes) – message the coach for online store suggestions.</li>
+                                <li><strong>Grappling:</strong> Rash guard or fitted t-shirt and shorts (no zippers or pockets).</li>
                                 <li><strong>All gear must be clean and nails trimmed for hygiene and safety.</strong></li>
                             </ul>
                         </div>
@@ -504,7 +500,7 @@
                             <svg class="faq-icon w-5 h-5 text-red-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </div>
                         <div class="faq-answer px-2 text-gray-300 text-sm">
-                            No. Your first few sessions focus on basic movements, breakfalls and positional drills. Sparring is optional and only after you’re comfortable.
+                            No. Your first few sessions focus on basic movements, breakfalls and positional drills. Sparring is optional and only after you're comfortable.
                         </div>
                     </div>
                     <div class="faq-item border-b border-white/5">
@@ -513,7 +509,7 @@
                             <svg class="faq-icon w-5 h-5 text-red-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </div>
                         <div class="faq-answer px-2 text-gray-300 text-sm">
-                            That’s normal. Most members started as beginners. The free intro class covers the absolute basics – no prior knowledge needed.
+                            That's normal. Most members started as beginners. The free intro class covers the absolute basics – no prior knowledge needed.
                         </div>
                     </div>
                     <div class="faq-item border-b border-white/5">
@@ -522,16 +518,16 @@
                             <svg class="faq-icon w-5 h-5 text-red-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </div>
                         <div class="faq-answer px-2 text-gray-300 text-sm">
-                            Yes. You’re welcome to observe a session. Just message ahead so we know you’re coming.
+                            Yes. You're welcome to observe a session. Just message ahead so we know you're coming.
                         </div>
                     </div>
                     <div class="faq-item border-b border-white/5">
                         <div class="faq-question flex justify-between items-center py-3 px-2 rounded-lg">
-                            <span class="font-medium text-white">8. What if I can’t make it every week?</span>
+                            <span class="font-medium text-white">8. What if I can't make it every week?</span>
                             <svg class="faq-icon w-5 h-5 text-red-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </div>
                         <div class="faq-answer px-2 text-gray-300 text-sm">
-                            That’s fine. Train when you can. There is no attendance requirement or contract lock-in.
+                            That's fine. Train when you can. There is no attendance requirement or contract lock-in.
                         </div>
                     </div>
                     <div class="faq-item border-b border-white/5">
@@ -609,13 +605,13 @@
                         <button type="submit" class="w-full bg-red-600 hover:bg-red-700 transition font-semibold py-3.5 rounded-lg">Book my free trial →</button>
                     </form>
                     <div id="formConfirmation" class="text-green-400 text-sm text-center mt-4 hidden"></div>
-                    <p class="text-gray-500 text-xs text-center mt-4">We’ll reply by SMS or email within 24 hours.</p>
+                    <p class="text-gray-500 text-xs text-center mt-4">We'll reply by SMS or email within 24 hours.</p>
                 </div>
             </div>
         </section>
 
         <footer class="py-8 border-t border-white/10 text-center text-gray-500 text-sm">
-            <p>HAMILTON COMBAT SPORTS · SAMBO &amp; SUBMISSION GRAPPLING</p>
+            <p>HAMILTON COMBAT SPORTS · GRAPPLING AND MARTIAL ARTS</p>
             <p>Located in Hamilton, Victoria, Australia 3300</p>
             <p class="mt-2">&copy; 2026 ALL RIGHTS RESERVED.</p>
         </footer>
@@ -633,7 +629,7 @@
                     <button id="closeChat" class="text-gray-400 hover:text-white text-xl leading-none" aria-label="Close chat">&times;</button>
                 </div>
                 <div id="chatMessages" class="h-64 overflow-y-auto text-sm space-y-2 px-1">
-                    <div class="bg-white/10 p-2 rounded-lg">Hello. I’m the HCS assistant. Ask about fees, schedule, free trial, Sambo or Submission Grappling.</div>
+                    <div class="bg-white/10 p-2 rounded-lg">Hello. I'm the HCS assistant. Ask about fees, schedule, free trial, or grappling.</div>
                 </div>
                 <div class="flex gap-2 mt-2">
                     <input type="text" id="chatInput" placeholder="e.g., How much?" class="flex-1 bg-black/50 border border-white/20 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500">
@@ -742,11 +738,10 @@
         function getBotReply(question) {
             var q = question.toLowerCase();
             if (q.includes('free trial') || q.includes('first class')) return "Your first intro class is free. To book, reply with your name and number, or use the booking form in the contact section.";
-            if (q.includes('fee') || q.includes('cost') || q.includes('price')) return "Casual adult $20, child $15. Weekly $35, fortnightly $55, monthly $90. Family plan available. First class free. No contracts.";
+            if (q.includes('fee') || q.includes('cost') || q.includes('price')) return "Casual adult $20, child $15. Weekly $35, fortnightly $55, monthly $90. First class free. No contracts.";
             if (q.includes('schedule') || q.includes('when') || q.includes('wednesday') || q.includes('thursday') || q.includes('time')) return "We train Wednesday and Thursday evenings, 5:30pm – 7:00pm.";
             if (q.includes('where') || q.includes('location') || q.includes('address')) return "Hamilton, VIC 3300. Exact venue shared after booking. Call 0412 106 908 for directions.";
-            if (q.includes('sambo')) return "Sambo is a combat sport combining throws, takedowns, pins and submissions. We teach Sport and Combat Sambo elements.";
-            if (q.includes('grappling') || q.includes('submission')) return "Submission Grappling is no-gi ground fighting focused on control, transitions and submissions (chokes and joint locks).";
+            if (q.includes('grappling')) return "Grappling is no-gi ground fighting focused on control, transitions and submissions (chokes and joint locks).";
             if (q.includes('beginner') || q.includes('new')) return "Beginners are welcome. The free intro class is designed for new students – just show up.";
             return "I can help with that. For specific questions, call 0412 106 908 or email hamiltoncombatsports@protonmail.com.";
         }
@@ -765,7 +760,7 @@
         chatInput.addEventListener('keypress', function(e) { if (e.key === 'Enter') sendUserMessage(); });
         setTimeout(function() {
             if (chatMessages.children.length === 1) {
-                addMessage("Ask me about schedule, fees, Sambo, or book a free trial.", false);
+                addMessage("Ask me about schedule, fees, grappling, or book a free trial.", false);
             }
         }, 1000);
     </script>
