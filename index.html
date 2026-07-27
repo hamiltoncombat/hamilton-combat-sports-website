@@ -32,7 +32,7 @@
         * { font-family: 'Inter', sans-serif; }
         body { background: #0a0c10; color: #ededee; }
         .glass-card {
-            background: rgba(18, 22, 28, 0.9);
+            background: rgba(18, 22, 28, 0.95);
             backdrop-filter: blur(8px);
             border: 1px solid rgba(220, 38, 38, 0.2);
             border-radius: 1.25rem;
@@ -141,31 +141,17 @@
             vertical-align: -0.18em;
             flex-shrink: 0;
         }
-        /* Faded background-image-behind-text sections (same treatment as the hero) */
-        .bg-photo-section {
+        /* Image styling - removed fading for readability */
+        .display-image {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 1.25rem;
+            box-shadow: 0 20px 40px -18px rgba(0,0,0,0.55);
+        }
+        .img-overlay {
             position: relative;
             overflow: hidden;
-        }
-        .bg-photo-section .bg-photo-img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            opacity: 0.28;
-            filter: saturate(0.9) contrast(1.02);
-            z-index: 0;
-        }
-        .bg-photo-section .bg-photo-overlay {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .bg-photo-section .bg-photo-content {
-            position: relative;
-            z-index: 2;
+            border-radius: 1.25rem;
         }
     </style>
     <script type="application/ld+json">
@@ -243,10 +229,10 @@
     <main>
         <!-- HERO -->
         <section class="relative hero-gradient pt-16 pb-20 md:pt-24 md:pb-28 border-b border-white/5 overflow-hidden">
-            <!-- Large faded background image (advert4) -->
+            <!-- Large faded background image (advert4) - strengthened overlay -->
             <div class="absolute inset-0 z-0">
-                <img src="images/advert4.jpg" alt="" class="w-full h-full object-cover object-center opacity-30">
-                <div class="absolute inset-0 bg-gradient-to-r from-[#0a0c10] via-[#0a0c10]/80 to-[#0a0c10]/50"></div>
+                <img src="images/advert4.jpg" alt="" class="w-full h-full object-cover object-center opacity-25">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#0a0c10] via-[#0a0c10]/90 to-[#0a0c10]/70"></div>
             </div>
             <div class="container mx-auto px-5 lg:px-8 max-w-6xl relative z-10">
                 <div class="max-w-2xl">
@@ -268,15 +254,13 @@
         </section>
 
         <!-- WHAT WE TRAIN -->
-        <section id="program" class="py-12 md:py-28 bg-photo-section">
-            <img src="images/advert2.jpeg" alt="" class="bg-photo-img">
-            <div class="bg-photo-overlay bg-gradient-to-b from-[#0a0c10] via-[#0a0c10]/90 to-[#0a0c10]"></div>
-            <div class="container mx-auto px-5 lg:px-8 max-w-6xl bg-photo-content">
+        <section id="program" class="py-12 md:py-28">
+            <div class="container mx-auto px-5 lg:px-8 max-w-6xl">
             <div class="text-center md:text-left mb-8 md:mb-14">
     <span class="text-red-500 font-semibold tracking-wider uppercase text-sm">What we teach</span>
                     <h2 class="text-4xl md:text-5xl font-bold mt-2"><span class="text-red-600">Grappling</span></h2>
                     <p class="text-gray-400 mt-4 max-w-2xl leading-relaxed">
-                        A system that give you effective standing and ground skills for self-defence, fitness and competition.
+                        A system that gives you effective standing and ground skills for self-defence, fitness and competition.
                     </p>
                 </div>
 
@@ -287,7 +271,7 @@
                         </div>
                         <h3 class="text-2xl font-bold text-red-500">Grappling</h3>
                         <p class="text-gray-300 mt-4 leading-relaxed">
-                            Grappling (often called no-gi grappling) is the modern ground-fighting system focused on positional control, transitions and finishing with joint locks or chokes. It draws from SAMBO, Brazilian jiu-jitsu, wrestling and catch wrestling, and is practised without the traditional jacket (no-gi). Ideal for building functional strength, timing and real-world control skills.
+                            Grappling (often called no-gi grappling) is the modern ground-fighting system focused on positional control, transitions and finishing with joint locks or chokes. It draws from Brazilian jiu-jitsu, wrestling and catch wrestling, and is practised without the traditional jacket (no-gi). Ideal for building functional strength, timing and real-world control skills.
                         </p>
                         <ul class="mt-5 space-y-2 text-gray-300 text-sm list-disc list-inside marker:text-red-500">
                             <li>Positional dominance &amp; escapes</li>
@@ -296,6 +280,11 @@
                         </ul>
                     </div>
                 </div>
+
+           <!-- Image - placed below text, no background effect -->
+           <div class="mt-10 max-w-4xl mx-auto img-overlay">
+                <img src="images/advert2.jpeg" alt="Athletes training grappling" class="display-image">
+            </div>
 
            <!-- Benefits row -->
 <div class="grid gap-6 mt-8 md:mt-14 sm:grid-cols-3">
@@ -446,10 +435,8 @@
         </section>
 
         <!-- COACHING -->
-        <section id="coaching" class="py-16 bg-white/[0.03] rounded-t-3xl bg-photo-section">
-            <img src="images/advert3.jpg" alt="" class="bg-photo-img">
-            <div class="bg-photo-overlay bg-gradient-to-b from-[#0a0c10] via-[#0a0c10]/85 to-[#0a0c10]"></div>
-            <div class="container mx-auto px-5 lg:px-8 max-w-6xl bg-photo-content">
+        <section id="coaching" class="py-16 bg-white/[0.03] rounded-t-3xl">
+            <div class="container mx-auto px-5 lg:px-8 max-w-6xl">
                 <div class="text-center mb-12">
                     <span class="text-red-500 font-semibold tracking-wider uppercase text-sm">Our coaches</span>
                     <h2 class="text-4xl md:text-5xl font-bold mt-2">Meet the <span class="text-red-600">instructors</span></h2>
@@ -466,7 +453,7 @@
                     </div>
                     <div class="flex flex-col sm:flex-row gap-5 items-center border-t border-white/10 pt-7">
                         <div class="w-24 h-24 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden flex-shrink-0">
-                            <svg class="w-14 h-14 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                            <svg class="w-14 h-14 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width:1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                         </div>
                         <div class="text-center sm:text-left">
                             <h3 class="text-2xl font-bold text-red-500">Luke</h3>
@@ -478,6 +465,11 @@
                                 <li>✓ Clear, supportive, detail-focused coaching</li>
                             </ul>
                         </div>
+                    </div>
+                    
+                    <!-- Coach image below the content card -->
+                    <div class="mt-8 img-overlay">
+                        <img src="images/advert3.jpg" alt="Coach and athletes at Hamilton Combat Sports" class="display-image">
                     </div>
                 </div>
             </div>
