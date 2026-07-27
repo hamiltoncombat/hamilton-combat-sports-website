@@ -141,12 +141,18 @@
             vertical-align: -0.18em;
             flex-shrink: 0;
         }
-        /* Image styling - removed fading for readability */
+                /* Image styling - subtle fade for visual depth */
         .display-image {
             width: 100%;
             object-fit: cover;
             border-radius: 1.25rem;
             box-shadow: 0 20px 40px -18px rgba(0,0,0,0.55);
+            opacity: 0.75;
+            transition: opacity 0.3s ease;
+        }
+
+        .display-image:hover {
+            opacity: 0.95;
         }
         .img-overlay {
             position: relative;
