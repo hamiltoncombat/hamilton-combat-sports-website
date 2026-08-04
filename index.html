@@ -186,6 +186,29 @@
             margin-top: -0.25rem;
             margin-bottom: 0.5rem;
         }
+        /* Accordion contact styles */
+        .contact-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        .contact-content.open {
+            max-height: 2500px;
+            opacity: 1;
+            transition: max-height 0.6s ease-in, opacity 0.4s ease-in;
+        }
+        .show-more-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.2s;
+        }
+        .show-more-btn:hover {
+            background: rgba(220,38,38,0.15);
+            border-color: rgba(220,38,38,0.4);
+        }
+        .show-more-btn .arrow { transition: transform 0.3s; }
+        .show-more-btn.open .arrow { transform: rotate(180deg); }
     </style>
     <script type="application/ld+json">
     {
@@ -598,7 +621,7 @@
             </div>
         </section>
 
-        <!-- PRIVATE TRAINING (NEW SECTION) -->
+        <!-- PRIVATE TRAINING SECTION -->
         <section id="private" class="py-16 bg-white/[0.03] rounded-t-3xl">
             <div class="container mx-auto px-5 lg:px-8 max-w-6xl">
                 <div class="text-center mb-10">
@@ -651,9 +674,19 @@
                                 </thead>
                                 <tbody>
                                     <tr class="border-b border-white/10 hover:bg-white/5 transition">
-                                        <td class="py-3 px-4 font-medium">One-on-one</td>
+                                        <td class="py-3 px-4 font-medium">One-on-one (non-member)</td>
                                         <td class="py-3 px-4 text-red-400 font-bold">$100</td>
                                         <td class="py-3 px-4 text-gray-300 text-sm">1 hour session. Full focus on your game.</td>
+                                    </tr>
+                                    <tr class="border-b border-white/10 hover:bg-white/5 transition">
+                                        <td class="py-3 px-4 font-medium">One-on-one (member)</td>
+                                        <td class="py-3 px-4 text-red-400 font-bold">$80</td>
+                                        <td class="py-3 px-4 text-gray-300 text-sm">1 hour session. Current members only.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-4 font-medium">Extra student</td>
+                                        <td class="py-3 px-4 text-red-400 font-bold">+$20</td>
+                                        <td class="py-3 px-4 text-gray-300 text-sm">Per additional person (up to 3 extra).</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -786,60 +819,73 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- CONTACT (Accordion style - Show more button) -->
         <section id="contact" class="py-20 bg-gradient-to-b from-black to-red-900/15">
             <div class="container mx-auto px-5 lg:px-8 max-w-4xl">
                 <div class="glass-card p-8 md:p-12 border border-red-500/25 shadow-xl">
                     <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Get in <span class="bg-red-600 px-2.5 py-1 inline-block rounded-md text-white">touch</span></h2>
                     <p class="text-center text-gray-200 mb-8">Start training Grappling in Hamilton, VIC.</p>
-                    
-                    <div class="space-y-6 text-center">
-                        <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 w-full">
-                            <a href="tel:0412106908" class="inline-flex items-center gap-3 bg-white/5 px-6 py-3 rounded-full hover:bg-red-600/30 transition">
-                                <svg class="w-5 h-5 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.128a11.056 11.056 0 005.14 5.14l1.128-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                <span class="font-mono text-lg">0412 106 908</span>
-                            </a>
-                            <a href="mailto:hamiltoncombatsports@protonmail.com" class="inline-flex items-center gap-3 bg-white/5 px-6 py-3 rounded-full hover:bg-red-600/30 transition max-w-full overflow-hidden">
-                                <svg class="w-5 h-5 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                <span class="truncate text-sm">hamiltoncombatsports@protonmail.com</span>
-                            </a>
-                        </div>
-                        <p class="text-gray-400 text-sm italic">Contact the coach to find the training location and confirm trial schedule. Hamilton, VIC 3300</p>
-                        <div class="pt-4 flex justify-center gap-5">
-                            <a href="https://www.facebook.com/profile.php?id=61583853042632" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="flex items-center gap-2 bg-white/5 hover:bg-red-600/30 transition px-5 py-2.5 rounded-full border border-white/10">
-                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.522-4.478-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
-                                <span class="text-sm font-medium">Facebook</span>
-                            </a>
-                            <a href="https://www.instagram.com/hamiltoncombatsports/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="flex items-center gap-2 bg-white/5 hover:bg-red-600/30 transition px-5 py-2.5 rounded-full border border-white/10">
-                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                                <span class="text-sm font-medium">Instagram</span>
-                            </a>
-                        </div>
+
+                    <!-- Show More Button -->
+                    <div class="flex justify-center">
+                        <button id="contactToggle" class="show-more-btn flex items-center gap-3 px-8 py-3.5 rounded-full text-sm font-medium text-white transition">
+                            <span id="contactToggleText">Show contact details</span>
+                            <svg class="arrow w-4 h-4 text-red-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
                     </div>
 
-                    <div class="relative my-8">
-                        <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-white/10"></div></div>
-                        <div class="relative flex justify-center text-xs"><span class="bg-black/50 px-3 py-1 rounded-full text-gray-400">or book online</span></div>
-                    </div>
+                    <!-- Contact Content (collapsible) -->
+                    <div id="contactContent" class="contact-content mt-6">
+                        <div class="space-y-6 text-center">
+                            <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 w-full">
+                                <a href="tel:0412106908" class="inline-flex items-center gap-3 bg-white/5 px-6 py-3 rounded-full hover:bg-red-600/30 transition">
+                                    <svg class="w-5 h-5 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.128a11.056 11.056 0 005.14 5.14l1.128-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                    <span class="font-mono text-lg">0412 106 908</span>
+                                </a>
+                                <a href="mailto:hamiltoncombatsports@protonmail.com" class="inline-flex items-center gap-3 bg-white/5 px-6 py-3 rounded-full hover:bg-red-600/30 transition max-w-full overflow-hidden">
+                                    <svg class="w-5 h-5 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    <span class="truncate text-sm">hamiltoncombatsports@protonmail.com</span>
+                                </a>
+                            </div>
+                            <p class="text-gray-400 text-sm italic">Contact the coach to find the training location and confirm trial schedule. Hamilton, VIC 3300</p>
+                            <div class="pt-4 flex justify-center gap-5">
+                                <a href="https://www.facebook.com/profile.php?id=61583853042632" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="flex items-center gap-2 bg-white/5 hover:bg-red-600/30 transition px-5 py-2.5 rounded-full border border-white/10">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.522-4.478-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                                    <span class="text-sm font-medium">Facebook</span>
+                                </a>
+                                <a href="https://www.instagram.com/hamiltoncombatsports/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="flex items-center gap-2 bg-white/5 hover:bg-red-600/30 transition px-5 py-2.5 rounded-full border border-white/10">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                    <span class="text-sm font-medium">Instagram</span>
+                                </a>
+                            </div>
 
-                    <form id="trialForm" class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1" for="name">Full name *</label>
-                            <input type="text" id="name" required class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+                            <div class="relative my-8">
+                                <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-white/10"></div></div>
+                                <div class="relative flex justify-center text-xs"><span class="bg-black/50 px-3 py-1 rounded-full text-gray-400">or book online</span></div>
+                            </div>
+
+                            <form id="trialForm" class="space-y-4 text-left">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-1" for="name">Full name *</label>
+                                    <input type="text" id="name" required class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-1" for="mobile">Mobile number *</label>
+                                    <input type="tel" id="mobile" required class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-1" for="email">Email address (optional)</label>
+                                    <input type="email" id="email" class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+                                </div>
+                                <p class="text-red-400 text-xs italic text-center">Limited mat space. Early booking recommended.</p>
+                                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 transition font-semibold py-3.5 rounded-lg">Book my free trial →</button>
+                            </form>
+                            <div id="formConfirmation" class="text-green-400 text-sm text-center mt-4 hidden"></div>
+                            <p class="text-gray-500 text-xs text-center mt-4">We'll reply by SMS or email within 24 hours.</p>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1" for="mobile">Mobile number *</label>
-                            <input type="tel" id="mobile" required class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1" for="email">Email address (optional)</label>
-                            <input type="email" id="email" class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
-                        </div>
-                        <p class="text-red-400 text-xs italic text-center">Limited mat space. Early booking recommended.</p>
-                        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 transition font-semibold py-3.5 rounded-lg">Book my free trial →</button>
-                    </form>
-                    <div id="formConfirmation" class="text-green-400 text-sm text-center mt-4 hidden"></div>
-                    <p class="text-gray-500 text-xs text-center mt-4">We'll reply by SMS or email within 24 hours.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -863,7 +909,7 @@
                     <button id="closeChat" class="text-gray-400 hover:text-white text-xl leading-none" aria-label="Close chat">&times;</button>
                 </div>
                 <div id="chatMessages" class="h-64 overflow-y-auto text-sm space-y-2 px-1">
-                    <div class="bg-white/10 p-2 rounded-lg">Hello. I'm the HCS assistant. Ask about fees, schedule, free trial, or grappling.</div>
+                    <div class="bg-white/10 p-2 rounded-lg">Hello. I'm the HCS assistant. Ask about fees, schedule, free trial, private sessions, or grappling.</div>
                 </div>
                 <div class="flex gap-2 mt-2">
                     <input type="text" id="chatInput" placeholder="e.g., How much?" class="flex-1 bg-black/50 border border-white/20 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-red-500">
@@ -875,6 +921,24 @@
     </div>
 
     <script>
+        // Contact accordion toggle
+        var contactToggle = document.getElementById('contactToggle');
+        var contactContent = document.getElementById('contactContent');
+        var contactToggleText = document.getElementById('contactToggleText');
+
+        contactToggle.addEventListener('click', function() {
+            var isOpen = contactContent.classList.contains('open');
+            if (isOpen) {
+                contactContent.classList.remove('open');
+                contactToggle.classList.remove('open');
+                contactToggleText.textContent = 'Show contact details';
+            } else {
+                contactContent.classList.add('open');
+                contactToggle.classList.add('open');
+                contactToggleText.textContent = 'Hide contact details';
+            }
+        });
+
         // Smooth scroll
         var HEADER_HEIGHT = 72;
         function scrollToSection(id) {
@@ -1015,7 +1079,10 @@
         function getBotReply(question) {
             var q = question.toLowerCase();
             if (q.includes('free trial') || q.includes('first class')) return "Your first intro class is free. To book, reply with your name and number, or use the booking form in the contact section.";
-            if (q.includes('fee') || q.includes('cost') || q.includes('price') || q.includes('private')) return "Group classes: casual $20, weekly $35, monthly $90. Private sessions: $100/hour. You can bring up to 3 extra people for $20 each.";
+            if (q.includes('private') || q.includes('one on one') || q.includes('1 on 1')) {
+                return "Private sessions: $100 for non-members, $80 for members. You can bring up to 3 extra people for $20 each. Book via the Private Training section.";
+            }
+            if (q.includes('fee') || q.includes('cost') || q.includes('price')) return "Group classes: casual $20, weekly $35, monthly $90. Private: $100/hr ($80 for members).";
             if (q.includes('schedule') || q.includes('when') || q.includes('wednesday') || q.includes('thursday') || q.includes('time')) return "Group classes: Wednesday and Thursday evenings, 5:30pm – 7:00pm. Private sessions are flexible – book a time that suits you.";
             if (q.includes('where') || q.includes('location') || q.includes('address')) return "Hamilton, VIC 3300. Exact venue shared after booking. Call 0412 106 908 for directions.";
             if (q.includes('grappling')) return "Grappling is no-gi ground fighting focused on control, transitions and submissions (chokes and joint locks).";
