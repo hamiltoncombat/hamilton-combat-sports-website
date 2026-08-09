@@ -1,87 +1,770 @@
-<link rel="icon" type="image/png" href="/images/SAMBOAustralia.png">
-<link rel="apple-touch-icon" href="/images/SAMBOAustralia.png">
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<meta property="og:title" content="Corporate Training Sessions | Hamilton Combat Sports">
-<meta property="og:description" content="Practical self-defence and fitness training for your workplace, delivered by Hamilton Combat Sports.">
-<meta property="og:image" content="https://hamiltoncombatsports.com/images/SAMBOAustralia.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://hamiltoncombatsports.com/corporate-training.html">
-<meta property="og:type" content="website">
+    <title>Corporate Training | Hamilton Combat Sports</title>
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Corporate Training Sessions | Hamilton Combat Sports">
-<meta name="twitter:image" content="https://hamiltoncombatsports.com/images/SAMBOAustralia.png">
+    <meta name="description"
+          content="Tailored corporate training from Hamilton Combat Sports. Practical personal safety, physical conflict management and scenario-based training in Hamilton and regional Victoria.">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-    * { font-family: 'Inter', sans-serif; }
-    body { background: #0a0c10; color: #ededee; }
-    .glass-card {
-        background: rgba(18, 22, 28, 0.95);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(220, 38, 38, 0.2);
-        border-radius: 1.25rem;
-        transition: all 0.3s ease;
+    <meta name="geo.region" content="AU-VIC">
+    <meta name="geo.placename" content="Hamilton, Victoria, Australia">
+
+    <link rel="icon" type="image/png" href="images/advert1.png">
+    <link rel="apple-touch-icon" href="images/advert1.png">
+
+    <meta property="og:title" content="Corporate Training | Hamilton Combat Sports">
+    <meta property="og:description"
+          content="Practical training tailored to your organisation.">
+    <meta property="og:image"
+          content="https://hamiltoncombatsports.com/images/advert1.png">
+    <meta property="og:url"
+          content="https://hamiltoncombatsports.com/corporate-training.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Corporate Training | Hamilton Combat Sports">
+    <meta name="twitter:description"
+          content="Practical training tailored to your organisation.">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0a0c10;
+            color: #ededee;
+        }
+
+        .glass-card {
+            background: rgba(18, 22, 28, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(220, 38, 38, 0.20);
+            border-radius: 1.25rem;
+        }
+
+        .btn-primary {
+            background: #dc2626;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.30);
+        }
+
+        .btn-primary:hover {
+            background: #b91c1c;
+            transform: translateY(-1px);
+        }
+
+        .hero-gradient {
+            background:
+                radial-gradient(
+                    ellipse at 20% 20%,
+                    rgba(220, 38, 38, 0.12) 0%,
+                    transparent 55%
+                ),
+                radial-gradient(
+                    ellipse at 80% 80%,
+                    rgba(220, 38, 38, 0.05) 0%,
+                    #0a0c10 70%
+                );
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Corporate Training",
+        "serviceType": "Corporate Training",
+        "provider": {
+            "@type": "Organization",
+            "name": "Hamilton Combat Sports",
+            "url": "https://hamiltoncombatsports.com/"
+        },
+        "areaServed": {
+            "@type": "Place",
+            "name": "Hamilton and regional Victoria, Australia"
+        },
+        "description": "Tailored corporate training in personal safety, physical conflict management and scenario-based practical skills."
     }
-    .glass-card:hover {
-        border-color: rgba(220, 38, 38, 0.55);
-        transform: translateY(-3px);
-        box-shadow: 0 20px 40px -18px rgba(0,0,0,0.55);
-    }
-    .btn-primary {
-        background: #dc2626;
-        transition: all 0.2s ease;
-        box-shadow: 0 4px 14px 0 rgba(220,38,38,0.3);
-    }
-    .btn-primary:hover {
-        background: #b91c1c;
-        transform: scale(1.02);
-        box-shadow: 0 6px 20px rgba(220,38,38,0.4);
-    }
-    .hero-gradient {
-        background: radial-gradient(ellipse at 20% 20%, rgba(220,38,38,0.12) 0%, transparent 55%),
-                    radial-gradient(ellipse at 80% 80%, rgba(220,38,38,0.06) 0%, #0a0c10 70%);
-    }
-    .info-icon {
-        width: 1.1rem;
-        height: 1.1rem;
-        stroke: #dc2626;
-        stroke-width: 1.75;
-        fill: none;
-        display: inline-block;
-        vertical-align: -0.18em;
-        flex-shrink: 0;
-    }
-    .simple-icon {
-        width: 1.5rem;
-        height: 1.5rem;
-        stroke: #dc2626;
-        stroke-width: 1.5;
-        fill: none;
-    }
-    @keyframes fadeSlideUp {
-        from { opacity: 0; transform: translateY(18px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-up { animation: fadeSlideUp 0.55s ease-out forwards; }
-    .delay-100 { animation-delay: 0.1s; }
-    .delay-200 { animation-delay: 0.2s; }
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Corporate training session",
-  "provider": {
-    "@type": "SportsActivityLocation",
-    "name": "Hamilton Combat Sports"
-  },
-  "areaServed": {
-    "@type": "Place",
-    "name": "Hamilton, Victoria, Australia"
-  },
-  "description": "Tailored corporate self-defence, fitness and grappling fundamentals sessions delivered at your workplace or our training venue in Hamilton, VIC."
-}
-</script>
+    </script>
+</head>
+
+<body class="antialiased">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
+
+        <div class="container mx-auto px-5 lg:px-8">
+
+            <div class="flex items-center justify-between h-16 md:h-20">
+
+                <a href="index.html"
+                   class="flex items-center gap-2.5 text-xl font-bold tracking-tight">
+
+                    <img
+                        src="images/advert1.png"
+                        alt="Hamilton Combat Sports"
+                        class="h-11 w-11 sm:h-12 sm:w-12 rounded-lg object-contain flex-shrink-0 p-1 bg-white/5">
+
+                    <span>
+                        HAMILTON
+                        <span class="text-red-600">COMBAT SPORTS</span>
+                    </span>
+
+                </a>
+
+                <!-- DESKTOP NAV -->
+                <nav class="hidden lg:flex items-center space-x-5 xl:space-x-7 text-sm font-medium whitespace-nowrap">
+
+                    <a href="index.html#program"
+                       class="hover:text-red-500 transition">
+                        Program
+                    </a>
+
+                    <a href="index.html#schedule"
+                       class="hover:text-red-500 transition">
+                        Schedule
+                    </a>
+
+                    <a href="index.html#fees"
+                       class="hover:text-red-500 transition">
+                        Pricing
+                    </a>
+
+                    <a href="index.html#coaching"
+                       class="hover:text-red-500 transition">
+                        Coaches
+                    </a>
+
+                    <a href="index.html#faq"
+                       class="hover:text-red-500 transition">
+                        FAQ
+                    </a>
+
+                    <a href="index.html#contact"
+                       class="hover:text-red-500 transition">
+                        Contact
+                    </a>
+
+                    <a href="private-sessions.html"
+                       class="hover:text-red-500 transition">
+                        Private Sessions
+                    </a>
+
+                    <a href="corporate-training.html"
+                       class="text-red-500">
+                        Corporate Training
+                    </a>
+
+                </nav>
+
+                <div class="flex items-center gap-4">
+
+                    <a href="tel:0412106908"
+                       class="hidden sm:flex items-center text-sm bg-white/5 px-4 py-2 rounded-full hover:bg-red-600/20 transition border border-white/10">
+
+                        <span class="font-medium">
+                            0412 106 908
+                        </span>
+
+                    </a>
+
+                    <button
+                        id="mobile-menu-button"
+                        type="button"
+                        class="lg:hidden text-white focus:outline-none"
+                        aria-label="Open menu"
+                        aria-expanded="false">
+
+                        <svg
+                            class="w-7 h-7"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24">
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7">
+                            </path>
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- MOBILE NAV -->
+            <div
+                id="mobile-menu"
+                class="hidden lg:hidden pb-4 space-y-2 text-base font-medium">
+
+                <a href="index.html#program" class="block py-2 hover:text-red-500">
+                    Program
+                </a>
+
+                <a href="index.html#schedule" class="block py-2 hover:text-red-500">
+                    Schedule
+                </a>
+
+                <a href="index.html#fees" class="block py-2 hover:text-red-500">
+                    Pricing
+                </a>
+
+                <a href="index.html#coaching" class="block py-2 hover:text-red-500">
+                    Coaches
+                </a>
+
+                <a href="index.html#faq" class="block py-2 hover:text-red-500">
+                    FAQ
+                </a>
+
+                <a href="index.html#contact" class="block py-2 hover:text-red-500">
+                    Contact
+                </a>
+
+                <a href="private-sessions.html" class="block py-2 hover:text-red-500">
+                    Private Sessions
+                </a>
+
+                <a href="corporate-training.html" class="block py-2 text-red-500">
+                    Corporate Training
+                </a>
+
+                <a href="tel:0412106908" class="block py-2 text-red-400">
+                    Call 0412 106 908
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="relative hero-gradient pt-20 pb-20 md:pt-28 md:pb-28 border-b border-white/5 overflow-hidden">
+
+            <div class="container mx-auto px-5 lg:px-8 max-w-5xl relative z-10">
+
+                <div class="max-w-3xl mx-auto text-center">
+
+                    <span class="text-red-500 font-semibold tracking-wider uppercase text-sm">
+                        For organisations
+                    </span>
+
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter leading-[1.08] mt-3">
+
+                        CORPORATE
+                        <span class="text-red-600">TRAINING</span>
+
+                    </h1>
+
+                    <p class="text-xl md:text-2xl text-gray-200 mt-7">
+                        Practical training tailored to your organisation.
+                    </p>
+
+                    <p class="text-gray-400 mt-5 max-w-2xl mx-auto leading-relaxed">
+
+                        Personal safety, physical conflict management and
+                        scenario-based training designed around the needs,
+                        environment and objectives of your team.
+
+                    </p>
+
+                    <div class="mt-9">
+
+                        <a
+                            href="#enquire"
+                            class="btn-primary px-9 py-3.5 rounded-full font-semibold tracking-wide inline-block">
+
+                            Discuss your requirements
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRO -->
+        <section class="py-16 md:py-20">
+
+            <div class="container mx-auto px-5 lg:px-8 max-w-3xl">
+
+                <div class="glass-card p-8 md:p-10 text-center">
+
+                    <p class="text-gray-200 text-lg leading-relaxed">
+
+                        Every organisation is different. Training is developed
+                        around the people involved, the environment they work in
+                        and the practical challenges they may encounter.
+
+                    </p>
+
+                    <p class="text-gray-400 mt-5 leading-relaxed">
+
+                        Sessions can range from short introductory workshops
+                        through to ongoing practical and scenario-based training.
+
+                    </p>
+
+                    <div class="mt-7 text-sm uppercase tracking-widest text-gray-300">
+
+                        Practical
+
+                        <span class="text-red-500 mx-2">
+                            •
+                        </span>
+
+                        Professional
+
+                        <span class="text-red-500 mx-2">
+                            •
+                        </span>
+
+                        Adaptable
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ENQUIRY -->
+        <section
+            id="enquire"
+            class="py-16 md:py-20 bg-gradient-to-b from-black to-red-900/15">
+
+            <div class="container mx-auto px-5 lg:px-8 max-w-3xl">
+
+                <div class="glass-card p-8 md:p-12 border border-red-500/25">
+
+                    <h2 class="text-3xl md:text-4xl font-bold text-center">
+
+                        Discuss your
+                        <span class="text-red-600">
+                            requirements
+                        </span>
+
+                    </h2>
+
+                    <p class="text-center text-gray-400 mt-4 mb-9">
+
+                        Tell us a little about your organisation and what
+                        you would like the training to achieve.
+
+                    </p>
+
+
+                    <form id="corporateForm" class="space-y-5 text-left">
+
+                        <!-- NAME / ORGANISATION -->
+                        <div class="grid sm:grid-cols-2 gap-4">
+
+                            <div>
+
+                                <label
+                                    class="block text-sm font-medium text-gray-300 mb-1"
+                                    for="companyName">
+
+                                    Organisation *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="companyName"
+                                    autocomplete="organization"
+                                    required
+                                    class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500">
+
+                            </div>
+
+
+                            <div>
+
+                                <label
+                                    class="block text-sm font-medium text-gray-300 mb-1"
+                                    for="yourName">
+
+                                    Your name *
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="yourName"
+                                    autocomplete="name"
+                                    required
+                                    class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMAIL / PHONE -->
+                        <div class="grid sm:grid-cols-2 gap-4">
+
+                            <div>
+
+                                <label
+                                    class="block text-sm font-medium text-gray-300 mb-1"
+                                    for="email">
+
+                                    Email *
+
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    autocomplete="email"
+                                    required
+                                    class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500">
+
+                            </div>
+
+
+                            <div>
+
+                                <label
+                                    class="block text-sm font-medium text-gray-300 mb-1"
+                                    for="phone">
+
+                                    Phone
+
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    autocomplete="tel"
+                                    class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PARTICIPANTS -->
+                        <div>
+
+                            <label
+                                class="block text-sm font-medium text-gray-300 mb-1"
+                                for="staffCount">
+
+                                Approximate number of participants
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="staffCount"
+                                min="1"
+                                class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500">
+
+                        </div>
+
+
+                        <!-- FOCUS -->
+                        <div>
+
+                            <label
+                                class="block text-sm font-medium text-gray-300 mb-1"
+                                for="focus">
+
+                                What would you like the training to address? *
+
+                            </label>
+
+                            <select
+                                id="focus"
+                                required
+                                class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500">
+
+                                <option value="" disabled selected>
+                                    Select an option
+                                </option>
+
+                                <option value="Personal safety">
+                                    Personal safety
+                                </option>
+
+                                <option value="Physical conflict management">
+                                    Physical conflict management
+                                </option>
+
+                                <option value="Scenario-based training">
+                                    Scenario-based training
+                                </option>
+
+                                <option value="Practical skills development">
+                                    Practical skills development
+                                </option>
+
+                                <option value="Not sure - discuss options">
+                                    Not sure — discuss options
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- NOTES -->
+                        <div>
+
+                            <label
+                                class="block text-sm font-medium text-gray-300 mb-1"
+                                for="notes">
+
+                                Tell us about your requirements
+
+                            </label>
+
+                            <textarea
+                                id="notes"
+                                rows="5"
+                                class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500 resize-none"
+                                placeholder="Your organisation, staff involved, objectives, work environment or anything else you think is relevant."></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="w-full bg-red-600 hover:bg-red-700 transition font-semibold py-3.5 rounded-lg">
+
+                            Enquire now →
+
+                        </button>
+
+                    </form>
+
+
+                    <div
+                        id="formConfirmation"
+                        class="text-green-400 text-sm text-center mt-5 hidden">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DIRECT CONTACT -->
+        <section class="py-14">
+
+            <div class="container mx-auto px-5 lg:px-8 max-w-3xl text-center">
+
+                <p class="text-gray-400">
+                    Prefer to discuss it directly?
+                </p>
+
+                <div class="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
+
+                    <a
+                        href="tel:0412106908"
+                        class="text-red-400 font-medium hover:text-red-300 transition">
+
+                        0412 106 908
+
+                    </a>
+
+                    <span class="hidden sm:inline text-gray-700">
+                        |
+                    </span>
+
+                    <a
+                        href="mailto:hamiltoncombatsports@protonmail.com"
+                        class="text-red-400 font-medium hover:text-red-300 transition break-all">
+
+                        hamiltoncombatsports@protonmail.com
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="py-8 border-t border-white/10 text-center text-gray-500 text-sm">
+
+            <p>
+                HAMILTON COMBAT SPORTS
+            </p>
+
+            <p class="mt-1">
+                Hamilton, Victoria, Australia 3300
+            </p>
+
+            <p class="mt-2">
+                &copy; 2026 ALL RIGHTS RESERVED.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script>
+
+        /*
+         * MOBILE MENU
+         */
+
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuButton && mobileMenu) {
+
+            menuButton.addEventListener('click', function () {
+
+                mobileMenu.classList.toggle('hidden');
+
+                const expanded =
+                    menuButton.getAttribute('aria-expanded') === 'true';
+
+                menuButton.setAttribute(
+                    'aria-expanded',
+                    String(!expanded)
+                );
+
+            });
+
+        }
+
+
+        /*
+         * CORPORATE ENQUIRY FORM
+         *
+         * This opens the visitor's normal email application.
+         * No server-side form service is required.
+         */
+
+        const form = document.getElementById('corporateForm');
+        const confirmation = document.getElementById('formConfirmation');
+
+        if (form) {
+
+            form.addEventListener('submit', function (event) {
+
+                event.preventDefault();
+
+                const companyName =
+                    document.getElementById('companyName').value.trim();
+
+                const yourName =
+                    document.getElementById('yourName').value.trim();
+
+                const email =
+                    document.getElementById('email').value.trim();
+
+                const phone =
+                    document.getElementById('phone').value.trim();
+
+                const staffCount =
+                    document.getElementById('staffCount').value.trim();
+
+                const focus =
+                    document.getElementById('focus').value;
+
+                const notes =
+                    document.getElementById('notes').value.trim();
+
+
+                if (!companyName || !yourName || !email || !focus) {
+
+                    alert('Please complete the required fields.');
+                    return;
+
+                }
+
+
+                let body = '';
+
+                body += 'Organisation: ' + companyName + '\n';
+                body += 'Contact name: ' + yourName + '\n';
+                body += 'Email: ' + email + '\n';
+
+                if (phone) {
+                    body += 'Phone: ' + phone + '\n';
+                }
+
+                if (staffCount) {
+                    body += 'Approximate participants: ' + staffCount + '\n';
+                }
+
+                body += 'Training interest: ' + focus + '\n';
+
+
+                if (notes) {
+
+                    body += '\nRequirements:\n';
+                    body += notes + '\n';
+
+                }
+
+
+                const subject =
+                    'Corporate training enquiry - ' + companyName;
+
+
+                const mailto =
+                    'mailto:hamiltoncombatsports@protonmail.com' +
+                    '?subject=' + encodeURIComponent(subject) +
+                    '&body=' + encodeURIComponent(body);
+
+
+                window.location.href = mailto;
+
+
+                if (confirmation) {
+
+                    confirmation.textContent =
+                        'Your email application should now open with your enquiry ready to send.';
+
+                    confirmation.classList.remove('hidden');
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
