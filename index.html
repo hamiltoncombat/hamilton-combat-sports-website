@@ -435,19 +435,9 @@
                                 <td class="py-3.5 px-4 text-gray-300 text-sm">1 session</td>
                             </tr>
                             <tr class="border-b border-white/10 hover:bg-white/5 transition">
-                                <td class="py-3.5 px-4 font-medium">Weekly unlimited</td>
-                                <td class="py-3.5 px-4 text-red-400 font-bold">$35</td>
-                                <td class="py-3.5 px-4 text-gray-300 text-sm">Both sessions in 7 days</td>
-                            </tr>
-                            <tr class="border-b border-white/10 hover:bg-white/5 transition">
-                                <td class="py-3.5 px-4 font-medium">Fortnightly</td>
-                                <td class="py-3.5 px-4 text-red-400 font-bold">$55</td>
-                                <td class="py-3.5 px-4 text-gray-300 text-sm">Unlimited sessions over 2 weeks</td>
-                            </tr>
-                            <tr class="border-b border-white/10 hover:bg-white/5 transition">
-                                <td class="py-3.5 px-4 font-medium">Monthly</td>
+                                <td class="py-3.5 px-4 font-medium">Four-week unlimited</td>
                                 <td class="py-3.5 px-4 text-red-400 font-bold">$90</td>
-                                <td class="py-3.5 px-4 text-gray-300 text-sm">Best value – unlimited over 4 weeks</td>
+                                <td class="py-3.5 px-4 text-gray-300 text-sm">Unlimited sessions over 4 weeks</td>
                             </tr>
                         </tbody>
                     </table>
@@ -674,35 +664,38 @@
 
                     <div class="relative my-8">
                         <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-white/10"></div></div>
-                        <div class="relative flex justify-center text-xs"><span class="bg-black/50 px-3 py-1 rounded-full text-gray-400">or prepare a booking text</span></div>
+                        <div class="relative flex justify-center text-xs"><span class="bg-black/50 px-3 py-1 rounded-full text-gray-400">or request your first class</span></div>
                     </div>
 
-                    <form id="trialForm" class="space-y-4 text-left">
+                    <form id="trialForm" class="space-y-4 text-left" novalidate>
+                        <div class="hidden" aria-hidden="true">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+                        </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1" for="name">Full name *</label>
-                            <input type="text" id="name" required class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+                            <label class="block text-sm font-medium text-gray-300 mb-1" for="firstName">First name *</label>
+                            <input type="text" id="firstName" name="first_name" autocomplete="given-name" required class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-300 mb-1" for="mobile">Mobile number *</label>
-                            <input type="tel" id="mobile" required class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+                            <input type="tel" id="mobile" name="mobile" autocomplete="tel" inputmode="tel" required class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1" for="email">Email address (optional)</label>
-                            <input type="email" id="email" class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-1" for="preferredNight">Preferred night</label>
-                            <select id="preferredNight" class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+                            <label class="block text-sm font-medium text-gray-300 mb-1" for="preferredNight">Preferred first visit *</label>
+                            <select id="preferredNight" name="preferred_visit" required class="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-red-500 transition">
+                                <option value="">Choose an option</option>
                                 <option value="Wednesday">Wednesday, 5:30–7:00pm</option>
                                 <option value="Thursday">Thursday, 5:30–7:00pm</option>
                                 <option value="Not sure yet">Not sure yet</option>
+                                <option value="I'd like to watch first">I'd like to watch first</option>
                             </select>
                         </div>
-                        <p class="text-red-400 text-xs italic text-center">Limited mat space. Early booking recommended.</p>
-                        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 transition font-semibold py-3.5 rounded-lg">Create my booking text →</button>
+                        <p class="text-gray-400 text-xs text-center">Luke will confirm the night and tell you what to bring.</p>
+                        <button id="trialSubmit" type="submit" class="w-full bg-red-600 hover:bg-red-700 transition font-semibold py-3.5 rounded-lg disabled:opacity-60 disabled:cursor-not-allowed">Request my free class</button>
                     </form>
-                    <div id="formConfirmation" class="text-green-400 text-sm text-center mt-4 hidden"></div>
-                    <p class="text-gray-500 text-xs text-center mt-4">Best on mobile: this opens a pre-filled SMS for you to review and send. We aim to reply within 24 hours.</p>
+                    <div id="formConfirmation" class="text-sm text-center mt-4 hidden" role="status" aria-live="polite" tabindex="-1"></div>
+                    <p class="text-gray-500 text-xs text-center mt-4">HCS uses these details only to arrange your class.</p>
+                    <p class="text-gray-400 text-xs text-center mt-2">Prefer to contact Luke directly? <a href="sms:+61412106908" class="text-red-400 hover:text-red-300">Text 0412 106 908</a> or <a href="tel:0412106908" class="text-red-400 hover:text-red-300">call</a>.</p>
                 </div>
             </div>
         </section>
@@ -809,27 +802,69 @@
             });
         });
 
-        // Trial form
+        // Trial form. Keep blank until an owner-controlled endpoint is approved.
+        var HCS_TRIAL_FORM_ENDPOINT = 'https://formspree.io/f/myegwzvk';
         var form = document.getElementById('trialForm');
         var confirmationDiv = document.getElementById('formConfirmation');
-        form.addEventListener('submit', function(e) {
+        var submitButton = document.getElementById('trialSubmit');
+        var formSubmitting = false;
+
+        function showFormMessage(message, isError) {
+            confirmationDiv.textContent = message;
+            confirmationDiv.classList.remove('hidden', 'text-green-400', 'text-red-400');
+            confirmationDiv.classList.add(isError ? 'text-red-400' : 'text-green-400');
+            confirmationDiv.focus();
+        }
+
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            var name = document.getElementById('name').value.trim();
+            if (formSubmitting) return;
+            var firstName = document.getElementById('firstName').value.trim();
             var mobile = document.getElementById('mobile').value.trim();
-            if (!name || !mobile) {
-                alert('Please enter both name and mobile number.');
+            var preferredNight = document.getElementById('preferredNight').value;
+            if (!firstName || !mobile || !preferredNight) {
+                showFormMessage('Please enter your first name, mobile number and preferred first visit.', true);
                 return;
             }
-            var email = document.getElementById('email').value.trim();
-            var preferredNight = document.getElementById('preferredNight').value;
-            var body = 'Free trial request\nName: ' + name + '\nMobile: ' + mobile;
-            if (email) body += '\nEmail: ' + email;
-            body += '\nPreferred night: ' + preferredNight + '\n\nPlease reply to confirm my first class at HILAC.';
-            window.location.href = 'sms:+61412106908?body=' + encodeURIComponent(body);
-            confirmationDiv.textContent = 'Your text-message draft has opened. Review it and press Send to complete your booking.';
-            confirmationDiv.classList.remove('hidden');
-            form.reset();
-            setTimeout(function() { confirmationDiv.classList.add('hidden'); }, 8000);
+
+            if (!HCS_TRIAL_FORM_ENDPOINT) {
+                showFormMessage('Your request was not sent because online requests are not connected yet. Please text Luke on 0412 106 908.', true);
+                return;
+            }
+
+            formSubmitting = true;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending…';
+            var params = new URLSearchParams(window.location.search);
+            var payload = {
+                first_name: firstName,
+                mobile: mobile,
+                preferred_visit: preferredNight,
+                company: document.getElementById('company').value,
+                page_url: window.location.href,
+                referrer: document.referrer,
+                submitted_at: new Date().toISOString(),
+                utm_source: params.get('utm_source') || '',
+                utm_medium: params.get('utm_medium') || '',
+                utm_campaign: params.get('utm_campaign') || ''
+            };
+
+            try {
+                var response = await fetch(HCS_TRIAL_FORM_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) throw new Error('Submission failed');
+                form.reset();
+                showFormMessage('Thanks, ' + firstName + '—your request has been sent. Luke will text you within 24 hours to confirm your free class. No payment is needed for your first visit.', false);
+            } catch (error) {
+                showFormMessage('Your request was not sent. Your details are still on this page. Please try again or text Luke on 0412 106 908.', true);
+            } finally {
+                formSubmitting = false;
+                submitButton.disabled = false;
+                submitButton.textContent = 'Request my free class';
+            }
         });
 
         // Chatbot
@@ -851,12 +886,12 @@
         function getBotReply(question) {
             var q = question.toLowerCase();
             if (q.includes('free trial') || q.includes('first class')) return "Your first intro class is free. To book, reply with your name and number, or use the booking form in the contact section.";
-            if (q.includes('fee') || q.includes('cost') || q.includes('price')) return "Casual ages 16+ $20; ages 14–15 $15. Weekly $35, fortnightly $55, monthly $90. First class free. No contracts.";
+            if (q.includes('fee') || q.includes('cost') || q.includes('price')) return "Casual ages 16+ $20; ages 14–15 $15. Four-week unlimited $90. First class free. No contracts.";
             if (q.includes('schedule') || q.includes('when') || q.includes('wednesday') || q.includes('thursday') || q.includes('time')) return "We train Wednesday and Thursday evenings, 5:30pm – 7:00pm.";
             if (q.includes('where') || q.includes('location') || q.includes('address')) return "We train at HILAC, 83–93 Shakespeare Street, Hamilton VIC 3300. Call 0412 106 908 if you need directions.";
             if (q.includes('grappling')) return "Grappling is no-gi ground fighting focused on control, transitions and submissions (chokes and joint locks).";
             if (q.includes('beginner') || q.includes('new')) return "Beginners are welcome. The free intro class is designed for new students – just show up.";
-            if (q.includes('private') || q.includes('1 on 1') || q.includes('one on one')) return "Private one-on-one sessions are $100/hour. You can book one on the Private Sessions page.";
+            if (q.includes('private') || q.includes('1 on 1') || q.includes('one on one')) return "Private one-on-one sessions are $80/hour. You can book one on the Private Sessions page.";
             return "I can help with that. For specific questions, call 0412 106 908 or email hamiltoncombatsports@protonmail.com.";
         }
 
